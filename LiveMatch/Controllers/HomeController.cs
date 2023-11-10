@@ -1,21 +1,25 @@
-﻿using LiveMatch.Models;
+﻿using LiveMatch.Data;
+using LiveMatch.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
 
 namespace LiveMatch.Controllers
 {
+    
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly ApplicationDbContext _contexto;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ApplicationDbContext contexto)
         {
-            _logger = logger;
+            _contexto = contexto;
         }
 
-        public IActionResult Index()
+        [HttpGet]
+        public async Task<IActionResult> Index()
         {
-            return View();
+            return View(await _contexto.Eventos.ToListAsync());
         }
 
         public IActionResult Privacy()

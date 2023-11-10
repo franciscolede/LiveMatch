@@ -1,4 +1,11 @@
+using LiveMatch.Data;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
+
+//Conexion local SQL
+builder.Services.AddDbContext<ApplicationDbContext>(opciones => 
+opciones.UseSqlServer(builder.Configuration.GetConnectionString("ConexionSql")));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
