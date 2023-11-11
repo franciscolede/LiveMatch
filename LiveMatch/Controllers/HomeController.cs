@@ -9,17 +9,17 @@ namespace LiveMatch.Controllers
     
     public class HomeController : Controller
     {
-        private readonly ApplicationDbContext _contexto;
+        private readonly ApplicationDbContext _context;
 
-        public HomeController(ApplicationDbContext contexto)
+        public HomeController(ApplicationDbContext context)
         {
-            _contexto = contexto;
+            _context = context;
         }
 
         [HttpGet]
         public async Task<IActionResult> Index()
         {
-            return View(await _contexto.Eventos.ToListAsync());
+            return View(await _context.Eventos.ToListAsync());
         }
 
         [HttpGet]
@@ -34,8 +34,8 @@ namespace LiveMatch.Controllers
         {
             if(ModelState.IsValid)
             {
-                _contexto.Eventos.Add(evento);
-                await _contexto.SaveChangesAsync();
+                _context.Eventos.Add(evento);
+                await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
 
@@ -51,7 +51,7 @@ namespace LiveMatch.Controllers
                 return NotFound();
             }
 
-            var evento = _contexto.Eventos.Find(id);
+            var evento = _context.Eventos.Find(id);
             if(evento == null)
             {
                 return NotFound();
@@ -66,8 +66,8 @@ namespace LiveMatch.Controllers
         {
             if (ModelState.IsValid)
             {
-                _contexto.Update(evento);
-                await _contexto.SaveChangesAsync();
+                _context.Update(evento);
+                await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
 
@@ -82,7 +82,7 @@ namespace LiveMatch.Controllers
                 return NotFound();
             }
 
-            var evento = _contexto.Eventos.Find(id);
+            var evento = _context.Eventos.Find(id);
             if (evento == null)
             {
                 return NotFound();
@@ -99,7 +99,7 @@ namespace LiveMatch.Controllers
                 return NotFound();
             }
 
-            var evento = _contexto.Eventos.Find(id);
+            var evento = _context.Eventos.Find(id);
             if (evento == null)
             {
                 return NotFound();
@@ -112,14 +112,14 @@ namespace LiveMatch.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteEvento(int? id)
         {
-            var evento = await _contexto.Eventos.FindAsync(id);
+            var evento = await _context.Eventos.FindAsync(id);
             if (evento == null)
             {
                 return View();
             }
 
-            _contexto.Eventos.Remove(evento);
-            await _contexto.SaveChangesAsync();
+            _context.Eventos.Remove(evento);
+            await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 

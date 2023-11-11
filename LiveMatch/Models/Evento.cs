@@ -9,20 +9,17 @@ namespace LiveMatch.Models
         [Column("ID")]
         public int Id { get; set; }
 
+        [Display(Name = "Imagen")]
+        public string? ImagenEvento { get; set; }
+
         [Display(Name = "Equipo local")]
         [Required(ErrorMessage = "Por favor, seleccione el equipo local.")]
         public string Local { get; set; }
 
 
-
         [Display(Name = "Equipo visitante")]
         [Required(ErrorMessage = "Por favor, seleccione el equipo visitante.")]
         public string Visitante { get; set; }
-
-
-        [Display(Name = "Imagen")]
-        public string? ImagenEvento { get; set; }
-
 
 
         [Display(Name = "Deporte")]
@@ -31,7 +28,9 @@ namespace LiveMatch.Models
 
         [Display(Name = "Estadio")]
         [Required(ErrorMessage = "Por favor, seleccione el estadio.")]
-        public string Estadio { get; set; }
+        public int? EstadioRefId { get; set; }
+        [ForeignKey("EstadioRefId")]
+        public virtual Estadio? Estadio { get; set; }
 
 
 

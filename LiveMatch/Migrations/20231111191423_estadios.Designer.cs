@@ -4,6 +4,7 @@ using LiveMatch.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LiveMatch.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20231111191423_estadios")]
+    partial class estadios
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -60,9 +63,9 @@ namespace LiveMatch.Migrations
                     b.Property<int?>("DeporteRefId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("EstadioRefId")
+                    b.Property<string>("Estadio")
                         .IsRequired()
-                        .HasColumnType("int");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime?>("FechaEvento")
                         .HasColumnType("smalldatetime");
@@ -80,20 +83,7 @@ namespace LiveMatch.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("EstadioRefId");
-
                     b.ToTable("Eventos");
-                });
-
-            modelBuilder.Entity("LiveMatch.Models.Evento", b =>
-                {
-                    b.HasOne("LiveMatch.Models.Estadio", "Estadio")
-                        .WithMany()
-                        .HasForeignKey("EstadioRefId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Estadio");
                 });
 #pragma warning restore 612, 618
         }

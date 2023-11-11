@@ -13,5 +13,9 @@ namespace LiveMatch.Data
         //Modelos
 
         public DbSet<Evento> Eventos { get; set; }
+
+        //Modelos
+
+        public DbSet<LiveMatch.Models.Estadio> Estadio { get; set; } = default!;
     }
 }
