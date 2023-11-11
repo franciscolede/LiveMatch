@@ -1,0 +1,68 @@
+﻿@model LiveMatch.Models.Evento
+@{
+    ViewData["Title"] = "Editar evento";
+}
+
+<h1 class="text-center">Eventos</h1>
+
+
+<div class="row">
+    <div class="offset-12">
+        <div class="card border">
+            <div class="card-header bg-dark">
+                <h3 class="text-white"><strong>Editar evento</strong></h3>
+            </div>
+
+            <div class="card-body">
+                <form asp-action="Edit" method="POST">
+
+                    <input type="hidden" asp-for="Id"/>
+
+
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        <label asp-for="Local" class="control-label"></label>
+                        <input asp-for="Local" class="form-control" placeholder="Ingrese el equipo local" />
+                        <span asp-validation-for="Local" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Visitante" class="control-label"></label>
+                        <input asp-for="Visitante" class="form-control" placeholder="Ingrese el equipo visitante" />
+                        <span asp-validation-for="Visitante" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="ImagenEvento" class="control-label"></label>
+                        <input asp-for="ImagenEvento" class="form-control" placeholder="Ingrese la iamgen del evento" />
+                        <span asp-validation-for="ImagenEvento" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="DeporteRefId" class="control-label"></label>
+                        <input asp-for="DeporteRefId" class="form-control" placeholder="Ingrese el deporte" />
+                        <span asp-validation-for="DeporteRefId" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Estadio" class="control-label"></label>
+                        <input asp-for="Estadio" class="form-control" placeholder="Ingrese el estadio" />
+                        <span asp-validation-for="Estadio" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="FechaEvento" class="control-label"></label>
+                        <input asp-for="FechaEvento" class="form-control" />
+                        <span asp-validation-for="FechaEvento" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group mt-3">
+                        <button type="submit" class="btn btn-primary d-block mx-auto">Editar evento</button>
+                    </div>
+
+                </form>
+                <a asp-controller="Home" asp-action="Index">Volver</a>
+            </div>
+        </div>
+    </div>
+</div>

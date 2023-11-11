@@ -1,0 +1,28 @@
+﻿@model LiveMatch.Models.Evento
+@{
+    ViewData["Title"] = "Detalle evento";
+}
+
+<h1 class="text-center">Eventos</h1>
+
+
+<div class="row">
+    <div class="offset-12">
+        <div class="card border">
+            <div class="card-header bg-dark">
+                <h3 class="text-white"><strong>Detalle del evento</strong></h3>
+            </div>
+
+            <div class="card-body">
+                <ul class="list-group">
+                    <li class="list-group-item"><strong>Local: </strong> @Html.DisplayFor(m=> m.Local)</li>
+                    <li class="list-group-item"><strong>Visitante: </strong> @Html.DisplayFor(m=> m.Visitante)</li>
+                    <li class="list-group-item"><strong>Deporte: </strong> @Html.DisplayFor(m=> m.DeporteRefId)</li>
+                    <li class="list-group-item"><strong>Estadio: </strong> @Html.DisplayFor(m=> m.Estadio)</li>
+                    <li class="list-group-item"><strong>Fecha: </strong> @Html.DisplayFor(m=> m.FechaEvento)</li>
+                </ul>
+                <a asp-controller="Home" asp-action="Index">Volver</a>
+            </div>
+        </div>
+    </div>
+</div>

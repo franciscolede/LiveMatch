@@ -1,0 +1,68 @@
+﻿@model LiveMatch.Models.Evento
+@{
+    ViewData["Title"] = "Eliminar evento";
+}
+
+<h1 class="text-center">Eventos</h1>
+
+
+<div class="row">
+    <div class="offset-12">
+        <div class="card border">
+            <div class="card-header bg-dark">
+                <h3 class="text-white"><strong>Eliminar evento</strong></h3>
+            </div>
+
+            <div class="card-body">
+                <form asp-action="Delete" method="POST">
+
+                    <input type="hidden" asp-for="Id" />
+
+
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        <label asp-for="Local" class="control-label"></label>
+                        <input asp-for="Local" class="form-control" readonly />
+                        <span asp-validation-for="Local" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Visitante" class="control-label"></label>
+                        <input asp-for="Visitante" class="form-control" readonly />
+                        <span asp-validation-for="Visitante" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="ImagenEvento" class="control-label"></label>
+                        <input asp-for="ImagenEvento" class="form-control" readonly />
+                        <span asp-validation-for="ImagenEvento" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="DeporteRefId" class="control-label"></label>
+                        <input asp-for="DeporteRefId" class="form-control" readonly />
+                        <span asp-validation-for="DeporteRefId" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Estadio" class="control-label"></label>
+                        <input asp-for="Estadio" class="form-control" readonly />
+                        <span asp-validation-for="Estadio" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="FechaEvento" class="control-label"></label>
+                        <input asp-for="FechaEvento" class="form-control" readonly />
+                        <span asp-validation-for="FechaEvento" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group mt-3">
+                        <button type="submit" class="btn btn-primary d-block mx-auto">Eliminar evento</button>
+                    </div>
+
+                </form>
+                <a asp-controller="Home" asp-action="Index">Volver</a>
+            </div>
+        </div>
+    </div>
+</div>
