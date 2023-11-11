@@ -23,7 +23,10 @@ namespace LiveMatch.Models
 
 
         [Display(Name = "Deporte")]
+        [Required(ErrorMessage = "Por favor, seleccione del deporte.")]
         public int? DeporteRefId { get; set; }
+        [ForeignKey("DeporteRefId")]
+        public virtual Deporte? Deporte { get; set; }
 
 
         [Display(Name = "Estadio")]

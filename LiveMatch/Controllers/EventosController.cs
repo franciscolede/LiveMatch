@@ -22,7 +22,9 @@ namespace LiveMatch.Controllers
         // GET: Eventos
         public async Task<IActionResult> Index()
         {
-            var applicationDbContext = _context.Eventos.Include(e => e.Estadio);
+            var applicationDbContext = _context.Eventos
+                .Include(e => e.Estadio)
+                .Include(e => e.Deporte);
             return View(await applicationDbContext.ToListAsync());
         }
 
@@ -36,6 +38,7 @@ namespace LiveMatch.Controllers
 
             var evento = await _context.Eventos
                 .Include(e => e.Estadio)
+                .Include(e => e.Deporte)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (evento == null)
             {
@@ -48,7 +51,8 @@ namespace LiveMatch.Controllers
         // GET: Eventos/Create
         public IActionResult Create()
         {
-            ViewData["EstadioRefId"] = new SelectList(_context.Estadio, "Id", "Descripcion");
+            ViewData["EstadioRefId"] = new SelectList(_context.Estadio, "Id", "Nombre");
+            ViewData["DeporteRefId"] = new SelectList(_context.Deporte, "Id", "Nombre");
             return View();
         }
 
@@ -65,7 +69,8 @@ namespace LiveMatch.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["EstadioRefId"] = new SelectList(_context.Estadio, "Id", "Descripcion", evento.EstadioRefId);
+            ViewData["EstadioRefId"] = new SelectList(_context.Estadio, "Id", "Nombre", evento.EstadioRefId);
+            ViewData["DeporteRefId"] = new SelectList(_context.Deporte, "Id", "Nombre", evento.DeporteRefId);
             return View(evento);
         }
 
@@ -82,7 +87,8 @@ namespace LiveMatch.Controllers
             {
                 return NotFound();
             }
-            ViewData["EstadioRefId"] = new SelectList(_context.Estadio, "Id", "Descripcion", evento.EstadioRefId);
+            ViewData["EstadioRefId"] = new SelectList(_context.Estadio, "Id", "Nombre", evento.EstadioRefId);
+            ViewData["DeporteRefId"] = new SelectList(_context.Deporte, "Id", "Nombre", evento.DeporteRefId);
             return View(evento);
         }
 
@@ -118,7 +124,8 @@ namespace LiveMatch.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["EstadioRefId"] = new SelectList(_context.Estadio, "Id", "Descripcion", evento.EstadioRefId);
+            ViewData["EstadioRefId"] = new SelectList(_context.Estadio, "Id", "Nombre", evento.EstadioRefId);
+            ViewData["DeporteRefId"] = new SelectList(_context.Deporte, "Id", "Nombre", evento.DeporteRefId);
             return View(evento);
         }
 
@@ -132,6 +139,7 @@ namespace LiveMatch.Controllers
 
             var evento = await _context.Eventos
                 .Include(e => e.Estadio)
+                .Include(e => e.Deporte)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (evento == null)
             {

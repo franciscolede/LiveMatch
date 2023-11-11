@@ -22,7 +22,7 @@
                 @Html.DisplayNameFor(model => model.Visitante)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.DeporteRefId)
+                @Html.DisplayNameFor(model => model.Deporte)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Estadio)
@@ -50,7 +50,7 @@
                 @Html.DisplayFor(modelItem => item.Visitante)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.DeporteRefId)
+                @Html.DisplayFor(modelItem => item.Deporte.Nombre)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Estadio.Nombre)
