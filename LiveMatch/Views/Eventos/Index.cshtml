@@ -4,7 +4,7 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1>Eventos</h1>
 
 <p>
     <a asp-action="Create">Create New</a>
@@ -37,11 +37,15 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                    <img src="~/images/@item.ImagenEvento"
-                         class="rounded-start"
-                         height="150" width="150"
-                         asp-append-version="true" />
-                    <br>
+                    @if (!string.IsNullOrEmpty(@item.ImagenEvento))
+                    {
+                        <img src="~/images/eventos/@item.ImagenEvento"
+                             class="rounded-start"
+                             height="150" width="150"
+                             asp-append-version="true" />
+                        <br>
+                    }
+                    
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Local)

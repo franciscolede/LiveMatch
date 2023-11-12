@@ -7,16 +7,19 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using LiveMatch.Data;
 using LiveMatch.Models;
+using Microsoft.AspNetCore.Hosting;
 
 namespace LiveMatch.Controllers
 {
     public class EventosController : Controller
     {
         private readonly ApplicationDbContext _context;
+        private readonly IWebHostEnvironment env;
 
-        public EventosController(ApplicationDbContext context)
+        public EventosController(ApplicationDbContext context, IWebHostEnvironment env)
         {
             _context = context;
+            this.env = env;
         }
 
         // GET: Eventos
@@ -65,6 +68,27 @@ namespace LiveMatch.Controllers
         {
             if (ModelState.IsValid)
             {
+                var files = HttpContext.Request.Form.Files;
+                if (files != null && files.Count > 0)
+                {
+                    var imageFile = files[0];
+                    var pathDestination = Path.Combine(env.WebRootPath, "images\\eventos");
+                    if (imageFile.Length > 0)
+                    {
+                        //generar nombre aleatorio
+                        var fileDestination = Guid.NewGuid().ToString();
+                        fileDestination = fileDestination.Replace("-", "");
+                        fileDestination += Path.GetExtension(imageFile.FileName);
+                        var DestinationRoute = Path.Combine(pathDestination, fileDestination);
+                        using (var filestream = new FileStream(DestinationRoute, FileMode.Create))
+                        {
+                            imageFile.CopyTo(filestream);
+                            evento.ImagenEvento = fileDestination;
+                        }
+                    }
+                }
+
+
                 _context.Add(evento);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -106,6 +130,38 @@ namespace LiveMatch.Controllers
 
             if (ModelState.IsValid)
             {
+
+                var files = HttpContext.Request.Form.Files;
+                if (files != null && files.Count > 0)
+                {
+                    var imageFile = files[0];
+                    var pathDestination = Path.Combine(env.WebRootPath, "images\\eventos");
+                    if (imageFile.Length > 0)
+                    {
+                        //generar nombre aleatorio
+                        var fileDestination = Guid.NewGuid().ToString();
+                        fileDestination = fileDestination.Replace("-", "");
+                        fileDestination += Path.GetExtension(imageFile.FileName);
+                        var DestinationRoute = Path.Combine(pathDestination, fileDestination);
+
+
+                        if (!string.IsNullOrEmpty(evento.ImagenEvento))
+                        {
+                            string lastImage = Path.Combine(pathDestination, evento.ImagenEvento);
+                            if (System.IO.File.Exists(lastImage))
+                                System.IO.File.Delete(lastImage);
+                        }
+                        
+
+
+                        using (var filestream = new FileStream(DestinationRoute, FileMode.Create))
+                        {
+                            imageFile.CopyTo(filestream);
+                            evento.ImagenEvento = fileDestination;
+                        }
+                    }
+                }
+
                 try
                 {
                     _context.Update(evento);

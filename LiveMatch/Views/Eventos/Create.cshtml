@@ -10,7 +10,7 @@
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Create">
+        <form asp-action="Create" enctype="multipart/form-data">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="Local" class="control-label"></label>
@@ -23,9 +23,8 @@
                 <span asp-validation-for="Visitante" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="ImagenEvento" class="control-label"></label>
-                <input asp-for="ImagenEvento" class="form-control" />
-                <span asp-validation-for="ImagenEvento" class="text-danger"></span>
+                <label class="control-label">Foto del evento</label>
+                <input asp-for="ImagenEvento" type="file" accept="image/png"/>
             </div>
             <div class="form-group">
                 <label asp-for="DeporteRefId" class="control-label"></label>

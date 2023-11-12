@@ -13,6 +13,14 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\Francisco\\Desktop\\LiveMatch\\LiveMatch\\wwwroot\\images\\eventos\\04c7512245be42eab455b8ef853bff7a.png",
+      "PackagePath": "staticwebassets\\images\\eventos\\04c7512245be42eab455b8ef853bff7a.png"
+    },
+    {
+      "Id": "C:\\Users\\Francisco\\Desktop\\LiveMatch\\LiveMatch\\wwwroot\\images\\eventos\\ff91b76c9b61443c8972a73ac178fb72.png",
+      "PackagePath": "staticwebassets\\images\\eventos\\ff91b76c9b61443c8972a73ac178fb72.png"
+    },
+    {
       "Id": "C:\\Users\\Francisco\\Desktop\\LiveMatch\\LiveMatch\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },

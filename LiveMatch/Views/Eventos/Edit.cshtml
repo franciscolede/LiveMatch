@@ -10,7 +10,7 @@
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Edit">
+        <form asp-action="Edit" enctype="multipart/form-data">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Id" />
             <div class="form-group">
@@ -22,11 +22,6 @@
                 <label asp-for="Visitante" class="control-label"></label>
                 <input asp-for="Visitante" class="form-control" />
                 <span asp-validation-for="Visitante" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ImagenEvento" class="control-label"></label>
-                <input asp-for="ImagenEvento" class="form-control" />
-                <span asp-validation-for="ImagenEvento" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="DeporteRefId" class="control-label"></label>
@@ -43,9 +38,26 @@
                 <input asp-for="FechaEvento" class="form-control" />
                 <span asp-validation-for="FechaEvento" class="text-danger"></span>
             </div>
+            <div>
+                <div class="form-group">
+                    <label class="control-label">Foto del evento</label>
+                    <input asp-for="ImagenEvento" type="file" accept="image/png" />
+                </div>
+                @if (!string.IsNullOrEmpty(@Model.ImagenEvento))
+                {
+                    <img src="~/images/eventos/@Model.ImagenEvento"
+                         class="rounded-start"
+                         height="150" width="150"
+                         asp-append-version="true" />
+                    <br>
+                }
+
+            </div>
+            <input type="hidden" asp-for="ImagenEvento" />
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
             </div>
+            
         </form>
     </div>
 </div>

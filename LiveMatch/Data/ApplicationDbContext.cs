@@ -14,12 +14,8 @@ namespace LiveMatch.Data
 
         public DbSet<Evento> Eventos { get; set; }
 
-        //Modelos
+        public DbSet<Estadio> Estadio { get; set; }
 
-        public DbSet<LiveMatch.Models.Estadio> Estadio { get; set; } = default!;
-
-        //Modelos
-
-        public DbSet<LiveMatch.Models.Deporte> Deporte { get; set; } = default!;
+        public DbSet<Deporte> Deporte { get; set; }
     }
 }
