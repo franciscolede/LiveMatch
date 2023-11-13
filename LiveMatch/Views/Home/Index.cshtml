@@ -1,5 +1,43 @@
 ﻿@model IEnumerable<LiveMatch.Models.Evento>
+
 @{
-    ViewData["Title"] = "Home";
+    ViewData["Title"] = "Index";
 }
 
+<table>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td style="vertical-align: top;">
+                    @if (!string.IsNullOrEmpty(item.ImagenEvento))
+                    {
+                        <img src="~/images/eventos/@item.ImagenEvento"
+                             alt="@item.NombreCompleto"
+                             class="rounded-start"
+                             height="200" width="200"
+                             asp-append-version="true" />
+                    }
+                </td>
+                <td style="vertical-align: top;">
+                    <h4>@item.NombreCompleto</h4>
+                    @if (item.Entradas != null && item.Entradas.Count > 0)
+                    {
+                        <ul>
+                            @foreach (var entrada in item.Entradas)
+                            {
+                                <li>@entrada.Parcialidad.Nombre (@entrada.TipoEspectador.Nombre) - @entrada.UbicacionEstadio.Nombre @entrada.Descripcion - Precio: $@entrada.Precio</li>
+                            }
+                        </ul>
+                    }
+                    else
+                    {
+                        <p>No hay entradas disponibles.</p>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+</table>

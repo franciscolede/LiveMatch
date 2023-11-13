@@ -9,6 +9,8 @@ namespace LiveMatch.Models
         [Column("ID")]
         public int Id { get; set; }
 
+        public virtual ICollection<Entrada> Entradas { get; set; }
+
         [Display(Name = "Imagen")]
         public string? ImagenEvento { get; set; }
 
@@ -45,6 +47,9 @@ namespace LiveMatch.Models
 
         [NotMapped]
         public string NombreCompleto => $"{Local} vs {Visitante}";
+
+
+       
 
     }
 }

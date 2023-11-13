@@ -19,7 +19,17 @@ namespace LiveMatch.Controllers
         [HttpGet]
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Eventos.ToListAsync());
+            var eventos = await _context.Eventos
+        .Include(e => e.Entradas)
+            .ThenInclude(entrada => entrada.UbicacionEstadio)
+        .Include(e => e.Entradas)
+            .ThenInclude(entrada => entrada.Parcialidad)
+        .Include(e => e.Entradas)
+            .ThenInclude(entrada => entrada.TipoEspectador)
+        .ToListAsync();
+
+
+            return View(eventos);
         }
 
         [HttpGet]
