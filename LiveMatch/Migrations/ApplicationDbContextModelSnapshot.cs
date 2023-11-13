@@ -22,6 +22,27 @@ namespace LiveMatch.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("LiveMatch.Models.CondicionPago", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("ID");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Descripcion")
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<DateTime?>("FechaRegistro")
+                        .HasColumnType("smalldatetime");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("CondicionPagos");
+                });
+
             modelBuilder.Entity("LiveMatch.Models.Deporte", b =>
                 {
                     b.Property<int>("Id")
@@ -48,7 +69,7 @@ namespace LiveMatch.Migrations
                     b.ToTable("Deporte");
                 });
 
-            modelBuilder.Entity("LiveMatch.Models.Estadio", b =>
+            modelBuilder.Entity("LiveMatch.Models.Entrada", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -61,6 +82,53 @@ namespace LiveMatch.Migrations
                         .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
+
+                    b.Property<int?>("EventoRefId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("ParcialidadRefId")
+                        .IsRequired()
+                        .HasColumnType("int");
+
+                    b.Property<int>("Precio")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("TipoEspectadorRefId")
+                        .IsRequired()
+                        .HasColumnType("int");
+
+                    b.Property<int?>("UbicacionEstadioRefId")
+                        .IsRequired()
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("EventoRefId");
+
+                    b.HasIndex("ParcialidadRefId");
+
+                    b.HasIndex("TipoEspectadorRefId");
+
+                    b.HasIndex("UbicacionEstadioRefId");
+
+                    b.ToTable("Entradas");
+                });
+
+            modelBuilder.Entity("LiveMatch.Models.Estadio", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("ID");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("Capacidad")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Descripcion")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime?>("FechaRegistro")
                         .HasColumnType("smalldatetime");
@@ -112,6 +180,99 @@ namespace LiveMatch.Migrations
                     b.HasIndex("EstadioRefId");
 
                     b.ToTable("Eventos");
+                });
+
+            modelBuilder.Entity("LiveMatch.Models.Parcialidad", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime?>("FechaRegistro")
+                        .HasColumnType("smalldatetime");
+
+                    b.Property<string>("Nombre")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Parcialidades");
+                });
+
+            modelBuilder.Entity("LiveMatch.Models.TipoEspectador", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime?>("FechaRegistro")
+                        .HasColumnType("smalldatetime");
+
+                    b.Property<string>("Nombre")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("TipoEspectadores");
+                });
+
+            modelBuilder.Entity("LiveMatch.Models.UbicacionEstadio", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime?>("FechaRegistro")
+                        .HasColumnType("smalldatetime");
+
+                    b.Property<string>("Nombre")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("UbicacionesEstadio");
+                });
+
+            modelBuilder.Entity("LiveMatch.Models.Entrada", b =>
+                {
+                    b.HasOne("LiveMatch.Models.Evento", "Evento")
+                        .WithMany()
+                        .HasForeignKey("EventoRefId");
+
+                    b.HasOne("LiveMatch.Models.Parcialidad", "Parcialidad")
+                        .WithMany()
+                        .HasForeignKey("ParcialidadRefId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("LiveMatch.Models.TipoEspectador", "TipoEspectador")
+                        .WithMany()
+                        .HasForeignKey("TipoEspectadorRefId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("LiveMatch.Models.UbicacionEstadio", "UbicacionEstadio")
+                        .WithMany()
+                        .HasForeignKey("UbicacionEstadioRefId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Evento");
+
+                    b.Navigation("Parcialidad");
+
+                    b.Navigation("TipoEspectador");
+
+                    b.Navigation("UbicacionEstadio");
                 });
 
             modelBuilder.Entity("LiveMatch.Models.Evento", b =>

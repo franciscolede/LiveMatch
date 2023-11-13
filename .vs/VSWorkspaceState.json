@@ -2,9 +2,10 @@
   "ExpandedNodes": [
     "",
     "\\LiveMatch",
+    "\\LiveMatch\\Data",
     "\\LiveMatch\\Views",
     "\\LiveMatch\\Views\\Shared"
   ],
-  "SelectedNode": "\\LiveMatch\\Views\\Shared\\_Layout.cshtml",
+  "SelectedNode": "\\LiveMatch\\Data\\ApplicationDbContext.cs",
   "PreviewInSolutionExplorer": false
 }

@@ -31,6 +31,9 @@
                 @Html.DisplayNameFor(model => model.Descripcion)
             </th>
             <th>
+                @Html.DisplayNameFor(model => model.Capacidad)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.FechaRegistro)
             </th>
             <th></th>
@@ -46,6 +49,9 @@
                 @Html.DisplayFor(modelItem => item.Descripcion)
             </td>
             <td>
+                @Html.DisplayFor(modelItem => item.Capacidad)
+            </td>
+            <td>
                 @Html.DisplayFor(modelItem => item.FechaRegistro)
             </td>
             <td>
@@ -57,27 +63,3 @@
 }
     </tbody>
 </table>
-
-
-@* @section Scripts{
-    <script>
-        function showData() {
-            const input = document.getElementById("inputExcel");
-            const formData = new FormData();
-
-            formData.append("ExcelFile", input.files[0]);
-
-            fetch("Estadios/ShowData", {
-                method: "POST",
-                body: formData
-            })
-                .then(response => response.json())  // Espera una respuesta JSON
-                .then(dataJson => {
-                })
-                .catch(error => {
-                    console.error("Error:", error);
-                });
-        }
-
-    </script>
-} *@

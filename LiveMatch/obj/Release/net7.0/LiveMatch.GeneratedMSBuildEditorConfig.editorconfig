@@ -16,6 +16,26 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\Francisco\Desktop\LiveMatch\LiveMatch
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/Francisco/Desktop/LiveMatch/LiveMatch/Views/CondicionesPagos/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29uZGljaW9uZXNQYWdvc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Francisco/Desktop/LiveMatch/LiveMatch/Views/CondicionesPagos/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29uZGljaW9uZXNQYWdvc1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Francisco/Desktop/LiveMatch/LiveMatch/Views/CondicionesPagos/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29uZGljaW9uZXNQYWdvc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Francisco/Desktop/LiveMatch/LiveMatch/Views/CondicionesPagos/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29uZGljaW9uZXNQYWdvc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Francisco/Desktop/LiveMatch/LiveMatch/Views/CondicionesPagos/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29uZGljaW9uZXNQYWdvc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Francisco/Desktop/LiveMatch/LiveMatch/Views/Deportes/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVwb3J0ZXNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -34,6 +54,26 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Francisco/Desktop/LiveMatch/LiveMatch/Views/Deportes/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVwb3J0ZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Francisco/Desktop/LiveMatch/LiveMatch/Views/Entradas/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW50cmFkYXNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Francisco/Desktop/LiveMatch/LiveMatch/Views/Entradas/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW50cmFkYXNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Francisco/Desktop/LiveMatch/LiveMatch/Views/Entradas/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW50cmFkYXNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Francisco/Desktop/LiveMatch/LiveMatch/Views/Entradas/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW50cmFkYXNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Francisco/Desktop/LiveMatch/LiveMatch/Views/Entradas/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW50cmFkYXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Francisco/Desktop/LiveMatch/LiveMatch/Views/Estadios/Create.cshtml]
@@ -72,10 +112,6 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZlbnRvc1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Francisco/Desktop/LiveMatch/LiveMatch/Views/Eventos/Import.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZlbnRvc1xJbXBvcnQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/Francisco/Desktop/LiveMatch/LiveMatch/Views/Eventos/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZlbnRvc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -84,12 +120,72 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Francisco/Desktop/LiveMatch/LiveMatch/Views/Parcialidades/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFyY2lhbGlkYWRlc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Francisco/Desktop/LiveMatch/LiveMatch/Views/Parcialidades/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFyY2lhbGlkYWRlc1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Francisco/Desktop/LiveMatch/LiveMatch/Views/Parcialidades/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFyY2lhbGlkYWRlc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Francisco/Desktop/LiveMatch/LiveMatch/Views/Parcialidades/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFyY2lhbGlkYWRlc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Francisco/Desktop/LiveMatch/LiveMatch/Views/Parcialidades/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFyY2lhbGlkYWRlc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Francisco/Desktop/LiveMatch/LiveMatch/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Francisco/Desktop/LiveMatch/LiveMatch/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Francisco/Desktop/LiveMatch/LiveMatch/Views/TipoEspectadores/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlwb0VzcGVjdGFkb3Jlc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Francisco/Desktop/LiveMatch/LiveMatch/Views/TipoEspectadores/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlwb0VzcGVjdGFkb3Jlc1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Francisco/Desktop/LiveMatch/LiveMatch/Views/TipoEspectadores/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlwb0VzcGVjdGFkb3Jlc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Francisco/Desktop/LiveMatch/LiveMatch/Views/TipoEspectadores/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlwb0VzcGVjdGFkb3Jlc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Francisco/Desktop/LiveMatch/LiveMatch/Views/TipoEspectadores/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlwb0VzcGVjdGFkb3Jlc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Francisco/Desktop/LiveMatch/LiveMatch/Views/UbicacionesEstadio/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVWJpY2FjaW9uZXNFc3RhZGlvXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Francisco/Desktop/LiveMatch/LiveMatch/Views/UbicacionesEstadio/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVWJpY2FjaW9uZXNFc3RhZGlvXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Francisco/Desktop/LiveMatch/LiveMatch/Views/UbicacionesEstadio/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVWJpY2FjaW9uZXNFc3RhZGlvXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Francisco/Desktop/LiveMatch/LiveMatch/Views/UbicacionesEstadio/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVWJpY2FjaW9uZXNFc3RhZGlvXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Francisco/Desktop/LiveMatch/LiveMatch/Views/UbicacionesEstadio/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVWJpY2FjaW9uZXNFc3RhZGlvXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Francisco/Desktop/LiveMatch/LiveMatch/Views/_ViewImports.cshtml]

@@ -13,10 +13,13 @@ namespace LiveMatch.Models
         [Display(Name = "Nombre")]
         public string Nombre { get; set; }
 
-        [Required(ErrorMessage = "Por favor, ingresar la descripción")]
-        [Display(Name = "Descripción")]
-        [StringLength(50)]
-        public string? Descripcion { get; set; }
+        [Required(ErrorMessage = "Por favor, ingresar la descripcion del estadio")]
+        [Display(Name = "Descripcion")]
+        public string Descripcion { get; set; }
+
+        [Required(ErrorMessage = "Por favor, ingresar la capacidad del estadio")]
+        [Display(Name = "Capacidad")]
+        public int Capacidad { get; set; }
 
         [Column(TypeName = "smalldatetime")]
         [DataType(DataType.Date)]

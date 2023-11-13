@@ -7,21 +7,19 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using LiveMatch.Data;
 using LiveMatch.Models;
+using NPOI.HSSF.UserModel;
 using NPOI.SS.UserModel;
 using NPOI.XSSF.UserModel;
-using NPOI.HSSF.UserModel;
 
 namespace LiveMatch.Controllers
 {
     public class EstadiosController : Controller
     {
         private readonly ApplicationDbContext _context;
-        private readonly IWebHostEnvironment env;
 
-        public EstadiosController(ApplicationDbContext context, IWebHostEnvironment env)
+        public EstadiosController(ApplicationDbContext context)
         {
             _context = context;
-            this.env = env;
         }
 
         // GET: Estadios
@@ -31,7 +29,6 @@ namespace LiveMatch.Controllers
                           View(await _context.Estadio.ToListAsync()) :
                           Problem("Entity set 'ApplicationDbContext.Estadio'  is null.");
         }
-
 
         [HttpPost]
         public async Task<IActionResult> ShowData([FromForm] IFormFile ExcelFile)
@@ -65,7 +62,8 @@ namespace LiveMatch.Controllers
                     {
                         Nombre = row.GetCell(0).ToString(),
                         Descripcion = row.GetCell(1).ToString(),
-                        FechaRegistro = ParseFecha(row.GetCell(2).ToString())
+                        Capacidad = int.Parse(row.GetCell(2).ToString()),
+                        FechaRegistro = ParseFecha(row.GetCell(3).ToString())
                     });
                 }
 
@@ -94,7 +92,6 @@ namespace LiveMatch.Controllers
             }
             return null;
         }
-
 
         // GET: Estadios/Details/5
         public async Task<IActionResult> Details(int? id)
@@ -125,7 +122,7 @@ namespace LiveMatch.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Nombre,Descripcion,FechaRegistro")] Estadio estadio)
+        public async Task<IActionResult> Create([Bind("Id,Nombre,Descripcion,Capacidad,FechaRegistro")] Estadio estadio)
         {
             if (ModelState.IsValid)
             {
@@ -157,7 +154,7 @@ namespace LiveMatch.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Nombre,Descripcion,FechaRegistro")] Estadio estadio)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Nombre,Descripcion,Capacidad,FechaRegistro")] Estadio estadio)
         {
             if (id != estadio.Id)
             {

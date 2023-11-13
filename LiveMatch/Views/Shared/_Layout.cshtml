@@ -19,10 +19,9 @@
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                                <ul class="navbar-nav flex-grow-1">
-                                    <div class="dropdown">
+                        <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                             <ul class="navbar-nav flex-grow-1">
+                                     <div class="dropdown">
                                         <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                             Archivo
                                         </button>
@@ -31,8 +30,34 @@
                                             <li><a class="dropdown-item" asp-area="" asp-controller="Estadios" asp-action="Index">Estadios</a></li>
                                             <li><a class="dropdown-item" asp-area="" asp-controller="Deportes" asp-action="Index">Deportes</a></li>
                                         </ul>
+                                     </div>
+
+                                     &nbsp;
+
+                                     <div class="dropdown">
+                                        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            Finanzas
+                                        </button>
+                                        <ul class="dropdown-menu" style="">
+                                            <li><a class="dropdown-item" asp-area="" asp-controller="CondicionesPagos" asp-action="Index">Condición de pago</a></li>
+                                        </ul>
                                     </div>
-                        </li>
+
+                                    &nbsp;
+
+                                    <div class="dropdown">
+                                        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            Partidos
+                                        </button>
+                                        <ul class="dropdown-menu" style="">
+                                        <li><a class="dropdown-item" asp-area="" asp-controller="Entradas" asp-action="Index">Entradas</a></li>
+                                        <li><a class="dropdown-item" asp-area="" asp-controller="Parcialidades" asp-action="Index">Parcialidades</a></li>
+                                        <li><a class="dropdown-item" asp-area="" asp-controller="TipoEspectadores" asp-action="Index">Tipo Espectador</a></li>
+                                        <li><a class="dropdown-item" asp-area="" asp-controller="UbicacionesEstadio" asp-action="Index">Ubicacion</a></li>
+                                        </ul>
+                                    </div>
+                             </ul>
+                        </div>
                     </ul>
                 </div>
             </div>

@@ -43,5 +43,8 @@ namespace LiveMatch.Models
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = false)]
         public DateTime? FechaEvento { get; set; }
 
+        [NotMapped]
+        public string NombreCompleto => $"{Local} vs {Visitante}";
+
     }
 }
