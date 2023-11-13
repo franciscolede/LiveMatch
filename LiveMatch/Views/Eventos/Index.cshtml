@@ -37,7 +37,7 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                    @if (!string.IsNullOrEmpty(@item.ImagenEvento))
+                    @if (!string.IsNullOrEmpty(item.ImagenEvento))
                     {
                         <img src="~/images/eventos/@item.ImagenEvento"
                              class="rounded-start"

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "E8n8RP+y0LydeDIiCAkTUNJTrK5o1akKMsf2pGYF8RY=",
+  "Hash": "Fv8+09EdN5GrgniEfSzmDPTbd8F+aMc14yiL3E5WIWA=",
   "Source": "LiveMatch",
   "BasePath": "_content/LiveMatch",
   "Mode": "Default",
@@ -1122,12 +1122,12 @@
       "OriginalItemSpec": "wwwroot\\images\\eventos\\04c7512245be42eab455b8ef853bff7a.png"
     },
     {
-      "Identity": "C:\\Users\\Francisco\\Desktop\\LiveMatch\\LiveMatch\\wwwroot\\images\\eventos\\ff91b76c9b61443c8972a73ac178fb72.png",
+      "Identity": "C:\\Users\\Francisco\\Desktop\\LiveMatch\\LiveMatch\\wwwroot\\images\\eventos\\8c14e7a0f2514dc5a5c91dacf4e57b38.png",
       "SourceId": "LiveMatch",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Francisco\\Desktop\\LiveMatch\\LiveMatch\\wwwroot\\",
       "BasePath": "_content/LiveMatch",
-      "RelativePath": "images/eventos/ff91b76c9b61443c8972a73ac178fb72.png",
+      "RelativePath": "images/eventos/8c14e7a0f2514dc5a5c91dacf4e57b38.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1136,7 +1136,41 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\eventos\\ff91b76c9b61443c8972a73ac178fb72.png"
+      "OriginalItemSpec": "wwwroot\\images\\eventos\\8c14e7a0f2514dc5a5c91dacf4e57b38.png"
+    },
+    {
+      "Identity": "C:\\Users\\Francisco\\Desktop\\LiveMatch\\LiveMatch\\wwwroot\\images\\eventos\\92028614dc264b52ab1e14fde3c2de3d.png",
+      "SourceId": "LiveMatch",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Francisco\\Desktop\\LiveMatch\\LiveMatch\\wwwroot\\",
+      "BasePath": "_content/LiveMatch",
+      "RelativePath": "images/eventos/92028614dc264b52ab1e14fde3c2de3d.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\eventos\\92028614dc264b52ab1e14fde3c2de3d.png"
+    },
+    {
+      "Identity": "C:\\Users\\Francisco\\Desktop\\LiveMatch\\LiveMatch\\wwwroot\\images\\eventos\\b4bb0ca676ae4b41842453c5e4039e44.png",
+      "SourceId": "LiveMatch",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Francisco\\Desktop\\LiveMatch\\LiveMatch\\wwwroot\\",
+      "BasePath": "_content/LiveMatch",
+      "RelativePath": "images/eventos/b4bb0ca676ae4b41842453c5e4039e44.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\eventos\\b4bb0ca676ae4b41842453c5e4039e44.png"
     },
     {
       "Identity": "C:\\Users\\Francisco\\Desktop\\LiveMatch\\LiveMatch\\wwwroot\\js\\site.js",

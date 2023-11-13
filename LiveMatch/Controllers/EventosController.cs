@@ -31,6 +31,7 @@ namespace LiveMatch.Controllers
             return View(await applicationDbContext.ToListAsync());
         }
 
+
         // GET: Eventos/Details/5
         public async Task<IActionResult> Details(int? id)
         {
@@ -72,9 +73,9 @@ namespace LiveMatch.Controllers
                 if (files != null && files.Count > 0)
                 {
                     var imageFile = files[0];
-                    var pathDestination = Path.Combine(env.WebRootPath, "images\\eventos");
                     if (imageFile.Length > 0)
                     {
+                    var pathDestination = Path.Combine(env.WebRootPath, "images\\eventos");
                         //generar nombre aleatorio
                         var fileDestination = Guid.NewGuid().ToString();
                         fileDestination = fileDestination.Replace("-", "");
@@ -228,5 +229,8 @@ namespace LiveMatch.Controllers
         {
           return (_context.Eventos?.Any(e => e.Id == id)).GetValueOrDefault();
         }
+
+
+
     }
 }
