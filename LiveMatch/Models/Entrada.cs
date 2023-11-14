@@ -14,6 +14,7 @@ namespace LiveMatch.Models
         [ForeignKey("EventoRefId")]
         public virtual Evento? Evento { get; set; }
 
+
         [Display(Name = "Parcialidad")]
         [Required(ErrorMessage = "Por favor, seleccione la parcialidad.")]
         public int? ParcialidadRefId { get; set; }
@@ -32,7 +33,6 @@ namespace LiveMatch.Models
         [ForeignKey("UbicacionEstadioRefId")]
         public virtual UbicacionEstadio? UbicacionEstadio { get; set; }
 
-        [Required(ErrorMessage = "Por favor, ingresar la descripción")]
         [Display(Name = "Descripción")]
         [StringLength(50)]
         public string? Descripcion { get; set; }

@@ -1,12 +1,13 @@
-﻿using LiveMatch.Data;
-using LiveMatch.Models;
+﻿using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using System.Diagnostics;
+using LiveMatch.Data;
+using LiveMatch.Models;
 
 namespace LiveMatch.Controllers
 {
-    
     public class HomeController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -16,127 +17,33 @@ namespace LiveMatch.Controllers
             _context = context;
         }
 
-        [HttpGet]
+        // GET: Home/Index
         public async Task<IActionResult> Index()
         {
-            var eventos = await _context.Eventos
-        .Include(e => e.Entradas)
-            .ThenInclude(entrada => entrada.UbicacionEstadio)
-        .Include(e => e.Entradas)
-            .ThenInclude(entrada => entrada.Parcialidad)
-        .Include(e => e.Entradas)
-            .ThenInclude(entrada => entrada.TipoEspectador)
-        .ToListAsync();
+            var eventos = await _context.Eventos.ToListAsync();
 
+            var viewModelList = new List<EventoEntradasViewModel>();
 
-            return View(eventos);
-        }
-
-        [HttpGet]
-        public IActionResult Create()
-        {
-            return View();
-        }
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(Evento evento)
-        {
-            if(ModelState.IsValid)
+            foreach (var evento in eventos)
             {
-                _context.Eventos.Add(evento);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                // Consulta para cargar las entradas y sus propiedades relacionadas
+                var entradas = await _context.Entradas
+                    .Include(e => e.Parcialidad)
+                    .Include(e => e.TipoEspectador)
+                    .Include(e => e.UbicacionEstadio)
+                    .Where(e => e.EventoRefId == evento.Id)
+                    .ToListAsync();
+
+                var viewModel = new EventoEntradasViewModel
+                {
+                    Evento = evento,
+                    Entradas = entradas // Ajusta según tus necesidades
+                };
+
+                viewModelList.Add(viewModel);
             }
 
-            return View();
-        }
-
-
-        [HttpGet]
-        public IActionResult Edit (int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var evento = _context.Eventos.Find(id);
-            if(evento == null)
-            {
-                return NotFound();
-            }
-
-            return View(evento);
-        }
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(Evento evento)
-        {
-            if (ModelState.IsValid)
-            {
-                _context.Update(evento);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
-            }
-
-            return View();
-        }
-
-        [HttpGet]
-        public IActionResult Details (int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var evento = _context.Eventos.Find(id);
-            if (evento == null)
-            {
-                return NotFound();
-            }
-
-            return View(evento);
-        }
-
-        [HttpGet]
-        public IActionResult Delete(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var evento = _context.Eventos.Find(id);
-            if (evento == null)
-            {
-                return NotFound();
-            }
-
-            return View(evento);
-        }
-
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteEvento(int? id)
-        {
-            var evento = await _context.Eventos.FindAsync(id);
-            if (evento == null)
-            {
-                return View();
-            }
-
-            _context.Eventos.Remove(evento);
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
-        }
-
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            return View(viewModelList);
         }
     }
 }
