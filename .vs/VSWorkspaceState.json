@@ -4,8 +4,9 @@
     "\\LiveMatch",
     "\\LiveMatch\\Data",
     "\\LiveMatch\\Views",
+    "\\LiveMatch\\Views\\Home",
     "\\LiveMatch\\Views\\Shared"
   ],
-  "SelectedNode": "\\LiveMatch\\Data\\ApplicationDbContext.cs",
+  "SelectedNode": "\\LiveMatch\\LiveMatch.sln",
   "PreviewInSolutionExplorer": false
 }

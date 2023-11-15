@@ -37,7 +37,7 @@ namespace LiveMatch.Controllers
                 var viewModel = new EventoEntradasViewModel
                 {
                     Evento = evento,
-                    Entradas = entradas // Ajusta según tus necesidades
+                    Entradas = entradas
                 };
 
                 viewModelList.Add(viewModel);
